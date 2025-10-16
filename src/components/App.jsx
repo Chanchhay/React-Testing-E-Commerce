@@ -25,7 +25,7 @@ function App() {
           {loading && products.length === 0 ? (
             <Loading />
           ) : (
-            <div class="grid grid-cols-3 gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
               {products.map((product) => (
                 <ProductListing
                   image={product.images}
