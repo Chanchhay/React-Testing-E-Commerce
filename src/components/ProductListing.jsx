@@ -1,11 +1,11 @@
-const ProductListing = ({ image, title }) => {
+const ProductListing = ({ image, title, description }) => {
   return (
     <>
-      <div class="bg-white rounded-lg shadow-lg p-8">
+      <div className="bg-white rounded-lg shadow-lg p-8">
         <div className="relative overflow-hidden">
           <img
             className="object-cover w-full h-full"
-            src={image?.[0]}
+            src={image}
             alt="Product"
           />
           <div className="absolute inset-0 bg-black opacity-40" />
@@ -17,7 +17,7 @@ const ProductListing = ({ image, title }) => {
         </div>
         <h3 className="text-xl font-bold text-gray-900 mt-4">{title}</h3>
         <p className="text-gray-500 text-sm mt-2">
-            {}
+            {description}
         </p>
         <div className="flex items-center justify-between mt-4">
           <span className="text-gray-900 font-bold text-lg">$29.99</span>
