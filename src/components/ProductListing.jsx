@@ -1,4 +1,10 @@
+import { useState } from "react";
+
 const ProductListing = ({ image, title, description }) => {
+  const [showFullDesc, setshowFullDesc] = useState(false);
+  if (!showFullDesc) {
+    description = description.substring(0, 90) + " ...";
+  }
   return (
     <>
       <div className="bg-white rounded-lg shadow-lg p-8">
@@ -16,9 +22,13 @@ const ProductListing = ({ image, title, description }) => {
           </div>
         </div>
         <h3 className="text-xl font-bold text-gray-900 mt-4">{title}</h3>
-        <p className="text-gray-500 text-sm mt-2">
-            {description}
-        </p>
+        <p className="text-gray-500 text-sm mt-2">{description}</p>
+        <button
+          onClick={() => setshowFullDesc((prevState) => !prevState)}
+          className="text-indigo-500 hover:text-indigo-600 mb-5"
+        >
+          {showFullDesc ? "Show Less" : "Show More"}
+        </button>
         <div className="flex items-center justify-between mt-4">
           <span className="text-gray-900 font-bold text-lg">$29.99</span>
           <button className="bg-gray-900 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800">

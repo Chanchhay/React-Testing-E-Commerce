@@ -31,14 +31,14 @@ function App() {
                   image={product.image}
                   title={product.title}
                   description={product.description}
-                  key ={product.id}
+                  key={product.id}
                 />
               ))}
             </div>
           )}
         </div>
       </div>
-      <FooterSection/>
+      <FooterSection />
     </div>
   );
 }
